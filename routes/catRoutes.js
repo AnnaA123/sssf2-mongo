@@ -19,7 +19,7 @@ router
   */
   )
   .get(async (req, res) => {
-    res.send(await cat.find().where("age").gt(5));
+    res.send(await cat.find()); //.where("age").gt(5));
   });
 
 router
