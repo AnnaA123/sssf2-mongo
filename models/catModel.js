@@ -14,5 +14,9 @@ const catSchema = new Schema({
     enum: ["male", "female", "robot"],
   },
 });
-
+/* do later
+catSchema.query.byAge = function (age) {
+  return this.find({ age: new RegExp(age, "i") });
+};
+*/
 module.exports = mongoose.model("Cat", catSchema);

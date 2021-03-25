@@ -1,3 +1,8 @@
 # sssf2-mongo
 
-course assignment
+---
+
+book-app.jelastic.metropolia.fi/cat
+
+- GET all cats
+- POST a cat (name, age, genre)

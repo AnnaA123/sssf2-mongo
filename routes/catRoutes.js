@@ -38,5 +38,4 @@ router
     const del = await cat.deleteOne({ _id: req.params.id });
     res.send(`deleted ${del.deletedCount} cat post`);
   });
-
 module.exports = router;
