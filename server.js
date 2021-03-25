@@ -10,7 +10,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use("/cat", require("./routes/catRoutes.js"));
 
 db.on("connected", () => {
-  app.listen(3000, () => {
-    console.log("express server started port 3000");
+  app.listen(3004, () => {
+    console.log("express server started port 3004");
   });
 });
