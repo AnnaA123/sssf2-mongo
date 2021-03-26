@@ -16,9 +16,10 @@ router
   .get(async (req, res) => {
     res.send(await station.find());
   });
-
+/*
 router.route("/:id").get(async (req, res) => {
-  res.send(await station.find(req.params.id));
+  res.send(await station.find(req.params._id));
 });
+*/
 
 module.exports = router;
