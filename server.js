@@ -8,6 +8,7 @@ const db = require("./db");
 app.use(express.urlencoded({ extended: false }));
 
 app.use("/cat", require("./routes/catRoutes.js"));
+app.use("/station", require("./routes/stationRoutes.js"));
 
 db.on("connected", () => {
   app.listen(3000, () => {
