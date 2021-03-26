@@ -1,6 +1,6 @@
-//module is in strict mode by default ;)
 const mongoose = require("mongoose");
 
+// Currently connects to chargemap db
 (async () => {
   try {
     await mongoose.connect(process.env.CM_URL, {
