@@ -20,9 +20,11 @@ router
   .get(async (req, res) => {
     try {
       const amount = req.query.limit;
+      const sorted = req.query.sort;
       const posts = await station
         .find()
         .byTown(req.query.town)
+        .skip(parseInt(sorted))
         .limit(parseInt(amount));
       console.log("limit: " + amount);
       res.send(posts);

@@ -12,9 +12,9 @@ book-app.jelastic.metropolia.fi/station/:id
 - GET station by id (i.e. http://book-app.jelastic.metropolia.fi/station/5e590b0a7536c009841db2df)
 - DELETE station by id
 
-http://localhost:3000/station?limit=10
+http://localhost:3000/station?sort=5&limit=10
 
-- GET 10 stations (amount can be changed)
+- (GET) sort 5 and limit 10 stations (amounts can be changed)
 
 book-app.jelastic.metropolia.fi/station?town=
 
