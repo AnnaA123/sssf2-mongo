@@ -26,7 +26,6 @@ router
         .byTown(req.query.town)
         .skip(parseInt(sorted))
         .limit(parseInt(amount));
-      console.log("limit: " + amount);
       res.send(posts);
     } catch (err) {
       console.error("query failed", err);
