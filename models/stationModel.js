@@ -11,12 +11,12 @@ const stationSchema = new Schema({
   Location: {
     type: {
       type: String,
-      enum: ["Point"],
-      required: true,
+      enum: ["Polygon"],
+      //required: true,
     },
     coordinates: {
       type: [[[Number]]],
-      required: true,
+      //required: true,
     },
   },
 });
