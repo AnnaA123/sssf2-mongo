@@ -19,7 +19,12 @@ router
   })
   .get(async (req, res) => {
     try {
-      const posts = await station.find().byTown(req.query.town);
+      const amount = req.query.limit;
+      const posts = await station
+        .find()
+        .byTown(req.query.town)
+        .limit(parseInt(amount));
+      console.log("limit: " + amount);
       res.send(posts);
     } catch (err) {
       console.error("query failed", err);
