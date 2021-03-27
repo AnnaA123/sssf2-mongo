@@ -11,7 +11,7 @@ router
       StateOrProvince: req.body.StateOrProvince,
       Postcode: req.body.Postcode,
       Location: {
-        type: req.body.type,
+        type: "Point",
         coordinates: [[[req.body.lat]], [[req.body.lng]]],
       },
     });
@@ -35,7 +35,7 @@ router
   })
   .delete(async (req, res) => {
     const del = await station.deleteOne({ _id: req.params.id });
-    res.send(`${del.deletedCount} station deleted`);
+    res.send(`station deleted`);
   });
 
 module.exports = router;
