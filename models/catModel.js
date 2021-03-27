@@ -14,4 +14,9 @@ const catSchema = new Schema({
     enum: ["male", "female", "robot"],
   },
 });
+
+catSchema.query.byGenre = function (genre) {
+  return this.find({ genre: new RegExp(genre, "i") });
+};
+
 module.exports = mongoose.model("Cat", catSchema);

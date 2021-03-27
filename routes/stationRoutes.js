@@ -18,7 +18,14 @@ router
     res.send(`station ${post.Title} created with id: ${post._id}`);
   })
   .get(async (req, res) => {
-    res.send(await station.find());
+    try {
+      const posts = await station.find().byTown(req.query.town);
+      res.send(posts);
+    } catch (err) {
+      console.error("query failed", err);
+      res.send("error");
+    }
+    //res.send(await station.find());
   });
 
 router

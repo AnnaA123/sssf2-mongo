@@ -19,7 +19,14 @@ router
   */
   )
   .get(async (req, res) => {
-    res.send(await cat.find()); //.where("age").gt(5));
+    try {
+      const posts = await cat.find().byGenre(req.query.genre);
+      res.send(posts);
+    } catch (err) {
+      console.error("query failed", err);
+      res.send("error");
+    }
+    //res.send(await cat.find()); //.where("age").gt(5));
   });
 
 router

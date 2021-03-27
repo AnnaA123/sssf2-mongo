@@ -21,4 +21,8 @@ const stationSchema = new Schema({
   },
 });
 
+stationSchema.query.byTown = function (town) {
+  return this.find({ Town: new RegExp(town, "i") });
+};
+
 module.exports = mongoose.model("Station", stationSchema);
