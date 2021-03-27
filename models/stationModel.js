@@ -16,7 +16,7 @@ const stationSchema = new Schema({
     },
     coordinates: {
       type: [[[Number]]],
-      //required: true,
+      required: true,
     },
   },
 });
