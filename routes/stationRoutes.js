@@ -10,10 +10,10 @@ router
       AddressLine1: req.body.AddressLine1,
       StateOrProvince: req.body.StateOrProvince,
       Postcode: req.body.Postcode,
-      /*Location: {
+      Location: {
         type: req.body.type,
-        coordinates: req.body.coordinates,
-      },*/
+        coordinates: [[[req.body.lat]], [[req.body.lng]]],
+      },
     });
     res.send(`station ${post.Title} created with id: ${post._id}`);
   })
