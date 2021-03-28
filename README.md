@@ -14,7 +14,7 @@ book-app.jelastic.metropolia.fi/station/:id
 
 http://book-app.jelastic.metropolia.fi/station?sort=5&limit=10
 
-- (GET) sort 5 and limit 10 stations (amounts can be changed)
+- (GET) start from the 5th station and limit result to 10 stations (values can be changed)
 
 book-app.jelastic.metropolia.fi/station?town=
 
