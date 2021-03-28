@@ -31,7 +31,6 @@ router
       console.error("query failed", err);
       res.send("error");
     }
-    //res.send(await station.find());
   });
 
 router
