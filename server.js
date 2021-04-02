@@ -9,6 +9,7 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use("/cat", require("./routes/catRoutes.js"));
 app.use("/station", require("./routes/stationRoutes.js"));
+app.use("/connections", require("./routes/connectionRoutes.js"));
 
 db.on("connected", () => {
   app.listen(3000, () => {

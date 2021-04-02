@@ -15,10 +15,16 @@ const stationSchema = new Schema({
       required: true,
     },
     coordinates: {
-      type: [[[Number]]],
+      type: [Number],
       required: true,
     },
   },
+  Connections: [
+    {
+      type: mongoose.Types.ObjectId,
+      ref: "Connection",
+    },
+  ],
 });
 
 stationSchema.query.byTown = function (town) {
