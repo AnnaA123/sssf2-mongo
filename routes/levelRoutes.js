@@ -1,16 +1,9 @@
 const router = require("express").Router();
 const e = require("express");
 const level = require("../models/levelModel.js");
+const levelController = require("../controllers/levelController.js");
 
-router.route("/").get(async (req, res) => {
-  try {
-    const posts = await level.find();
-    res.send(posts);
-  } catch (err) {
-    console.error("query failed", err);
-    res.send("error");
-  }
-});
+router.route("/").get(levelController.getLevelList);
 
 router
   .route("/:id")
