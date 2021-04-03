@@ -16,4 +16,8 @@ const getOneLevel = async (req, res) => {
   }
 };
 
-module.exports = { getLevelList, getOneLevel };
+const deleteLevel = async (req, res) => {
+  res.json(await level.deleteOne({ _id: req.params.id }));
+};
+
+module.exports = { getLevelList, getOneLevel, deleteLevel };

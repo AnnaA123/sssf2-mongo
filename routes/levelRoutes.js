@@ -7,12 +7,7 @@ router.route("/").get(levelController.getLevelList);
 
 router
   .route("/:id")
-  .get(async (req, res) => {
-    res.json(await level.findById(req.params.id));
-  })
-  .delete(async (req, res) => {
-    const del = await level.deleteOne({ _id: req.params.id });
-    res.send(`connection deleted`);
-  });
+  .get(levelController.getOneLevel)
+  .delete(levelController.deleteLevel);
 
 module.exports = router;
