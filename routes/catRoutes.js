@@ -1,3 +1,4 @@
+/*
 const router = require("express").Router();
 const cat = require("../models/catModel.js");
 
@@ -12,11 +13,6 @@ router
       });
       res.send(`cat post ${post.name} created with id: ${post._id}`);
     }
-    /*
-  catch (e) {
-    res.send("failed to create cat");
-  }
-  */
   )
   .get(async (req, res) => {
     try {
@@ -46,3 +42,4 @@ router
     res.send(`deleted ${del.deletedCount} cat post`);
   });
 module.exports = router;
+*/

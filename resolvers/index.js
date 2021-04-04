@@ -1,3 +1,13 @@
 import stationResolver from "./stationResolver.js";
+import { gql } from "apollo-server-express";
 
-export default [stationResolver];
+const linkSchema = gql`
+  type Query {
+    _: Boolean
+  }
+  type Mutation {
+    _: Boolean
+  }
+`;
+
+export default [linkSchema, stationResolver];
