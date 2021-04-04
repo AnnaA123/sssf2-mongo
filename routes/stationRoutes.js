@@ -7,11 +7,11 @@ const stationController = require("../controllers/stationController.js");
 router
   .route("/")
   .post(stationController.postStation)
-  .get(stationController.getOneStation);
+  .get(stationController.getStations);
 
 router
   .route("/:id")
-  .get(stationController.getStations)
+  .get(stationController.getOneStation)
   .delete(stationController.deleteStation);
 
 module.exports = router;

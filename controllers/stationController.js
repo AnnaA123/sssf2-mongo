@@ -23,7 +23,7 @@ const postStation = async (req, res) => {
   }
 };
 
-const getOneStation = async (req, res) => {
+const getStations = async (req, res) => {
   try {
     const amount = req.query.limit;
     const sorted = req.query.sort;
@@ -39,7 +39,7 @@ const getOneStation = async (req, res) => {
   }
 };
 
-const getStations = async (req, res) => {
+const getOneStation = async (req, res) => {
   try {
     const stations = await (await station.findById(req.params.id)).populate({
       path: "Connections",
