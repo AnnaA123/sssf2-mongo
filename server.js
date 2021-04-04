@@ -14,6 +14,8 @@ dotenv.config();
       console.log("Connected succesfully.");
     }
 
+    console.log(conn.queryTypes, conn.inputTypes, conn.mutationTypes); // fix later !!!
+
     const server = new ApolloServer({
       typeDefs: schemas,
       resolvers,

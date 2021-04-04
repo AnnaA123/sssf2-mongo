@@ -1,3 +1,4 @@
+/*
 const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
@@ -20,3 +21,4 @@ catSchema.query.byGenre = function (genre) {
 };
 
 module.exports = mongoose.model("Cat", catSchema);
+*/

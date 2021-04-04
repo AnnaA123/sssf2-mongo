@@ -1,8 +1,8 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const Schema = mongoose.Schema;
 
-const connectionTypeSchema = new Schema({
+const connectionSchema = new Schema({
   ConnectionTypeID: {
     type: mongoose.Types.ObjectId,
     ref: "ConnectionType",
@@ -18,4 +18,4 @@ const connectionTypeSchema = new Schema({
   Quantity: Number,
 });
 
-module.exports = mongoose.model("ConnectionType", connectionTypeSchema);
+export default mongoose.model("Connection.js", connectionSchema);

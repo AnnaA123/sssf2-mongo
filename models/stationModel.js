@@ -26,9 +26,9 @@ const stationSchema = new Schema({
     },
   ],
 });
-
-stationSchema.query.byTown = function (town) {
-  return this.find({ Town: new RegExp(town, "i") });
-};
-
+/*
+  stationSchema.query.byTown = function (town) {
+    return this.find({ Town: new RegExp(town, "i") });
+  };
+*/
 export default mongoose.model("Station", stationSchema);

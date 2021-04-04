@@ -16,6 +16,6 @@ export default gql`
             type: String
             coordinates: [Number]
         }
-        Connections: Connections
+        Connections: Connection
     }
 `;
