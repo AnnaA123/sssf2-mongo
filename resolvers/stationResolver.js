@@ -17,4 +17,22 @@ export default {
       }
     },
   },
+
+  Mutation: {
+    addStation: (parent, args) => {
+      try {
+        const newStation = new Station(args);
+        return newStation.save();
+      } catch (err) {
+        res.status(500).json({ message: err.message });
+      }
+    },
+    modifyStation: (parent, args) => {
+      try {
+        return Station.findByIdAndUpdate(args.id, args);
+      } catch (err) {
+        res.status(500).json({ message: err.message });
+      }
+    },
+  },
 };
