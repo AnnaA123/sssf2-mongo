@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const Schema = mongoose.Schema;
 
@@ -31,4 +31,4 @@ stationSchema.query.byTown = function (town) {
   return this.find({ Town: new RegExp(town, "i") });
 };
 
-module.exports = mongoose.model("Station", stationSchema);
+export default mongoose.model("Station", stationSchema);
