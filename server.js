@@ -1,5 +1,5 @@
 import { ApolloServer } from "apollo-server-express";
-import schemas from "./schemas/index.js";
+import schemas from "./resolvers/index.js";
 import resolvers from "./resolvers/index.js";
 import express from "express";
 import dotenv from "dotenv";

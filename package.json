@@ -21,6 +21,7 @@
     "graphql": "^15.5.0",
     "mongoose": "^5.12.1"
   },
+  "type": "module",
   "bugs": {
     "url": "https://github.com/AnnaA123/sssf2-mongo/issues"
   },
