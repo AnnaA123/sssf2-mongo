@@ -34,5 +34,12 @@ export default {
         res.status(500).json({ message: err.message });
       }
     },
+    deleteStation: (parent, args) => {
+      try {
+        return Station.findByIdAndDelete(args.id, args);
+      } catch (err) {
+        res.status(500).json({ message: err.message });
+      }
+    },
   },
 };
