@@ -38,7 +38,7 @@ export default gql`
             Town: String
             StateOrProvince: String
             Postcode: String
-            Location: PointObjectInput
+            Location: String
         ): Station
 
         deleteStation(id: ID!): Station
