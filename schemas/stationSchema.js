@@ -1,46 +1,63 @@
 import { gql } from "apollo-server-express";
 
 export default gql`
-    extend type Query {
-        station(id: ID): Station
-        stations(bounds: Bounds, limit: Int, start: Int): [Station] 
-    }
+  extend type Query {
+    station(id: ID): Station
+    stations(bounds: Bounds, limit: Int, start: Int): [Station]
+  }
 
-    type Station {
-        id: ID
-        Title: String
-        Town: String
-        StateOrProvince: String
-        Postcode: String
-        Location: {
-            type: String
-            coordinates: [Number]
-        }
-        Connections: Connection
-    }
+  type Station {
+    id: ID
+    Title: String
+    AddressLine1: String
+    Town: String
+    StateOrProvince: String
+    Postcode: String
+    Location: LocationDetails
+    Connections: [Connection]
+  }
 
-    extend type Mutation {
-        addStation(
-            Connections: [ConnectionInput]
-            Title: String!
-            AddressLine1: String
-            Town: String
-            StateOrProvince: String
-            Postcode: String
-            Location: PointObjectInput
-        ): Station
+  type LocationDetails {
+    coordinates: [Float]
+    type: String
+  }
 
-        modifyStation(
-            id: ID!
-            Connections: [ConnectionInput]
-            Title: String
-            AddressLine1: String
-            Town: String
-            StateOrProvince: String
-            Postcode: String
-            Location: String
-        ): Station
+  input LocationDetailsInput {
+    coordinates: [Float]
+  }
 
-        deleteStation(id: ID!): Station
-    }
+  input Bounds {
+    _southWest: LatLng
+    _northEast: Latlng
+  }
+
+  input LatLng {
+    lat: Float
+    lng: Float
+  }
+
+  extend type Mutation {
+    addStation(
+      Connections: [ConnectionInput]
+      Title: String
+      AddressLine1: String
+      Town: String
+      StateOrProvince: String
+      Postcode: String
+      Location: LocationDetailsInput
+    ): Station
+
+    modifyStation(
+      id: ID!
+      Connections: [ConnectionInput]
+      Title: String
+      AddressLine1: String
+      Town: String
+      StateOrProvince: String
+      Postcode: String
+      Location: String
+    ): Station
+
+    deleteStation(id: ID!): Station
+  }
 `;

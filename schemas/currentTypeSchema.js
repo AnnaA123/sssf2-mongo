@@ -2,7 +2,7 @@ import { gql } from "apollo-server-express";
 
 export default gql`
   extend type Query: {
-    currentType: [CurrentType]
+    currenttypes: [CurrentType]
   }
 
   type CurrentType {

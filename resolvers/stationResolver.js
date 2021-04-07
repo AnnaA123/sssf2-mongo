@@ -3,43 +3,23 @@ import Station from "../models/stationModel.js";
 export default {
   Query: {
     stations: () => {
-      try {
-        return Station.find();
-      } catch (err) {
-        res.status(500).json({ message: err.message });
-      }
+      return Station.find();
     },
     station: (parent, args) => {
-      try {
-        return Station.findById(args.id);
-      } catch (err) {
-        res.status(500).json({ message: err.message });
-      }
+      return Station.findById(args.id);
     },
   },
 
   Mutation: {
     addStation: (parent, args) => {
-      try {
-        const newStation = new Station(args);
-        return newStation.save();
-      } catch (err) {
-        res.status(500).json({ message: err.message });
-      }
+      const newStation = new Station(args);
+      return newStation.save();
     },
     modifyStation: (parent, args) => {
-      try {
-        return Station.findByIdAndUpdate(args.id, args);
-      } catch (err) {
-        res.status(500).json({ message: err.message });
-      }
+      return Station.findByIdAndUpdate(args.id, args);
     },
     deleteStation: (parent, args) => {
-      try {
-        return Station.findByIdAndDelete(args.id, args);
-      } catch (err) {
-        res.status(500).json({ message: err.message });
-      }
+      return Station.findByIdAndDelete(args.id, args);
     },
   },
 };
