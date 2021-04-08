@@ -32,12 +32,14 @@ export default {
   },
 
   Mutation: {
-    addStation: (parent, args) => {
-      const conns = await Promise.all(args.Connections.map(async conn => {
-        let newConn = new Connection(conn);
-        const result = await newConnection.save();
-        return result._id;
-      }));
+    addStation: async (parent, args) => {
+      const conns = await Promise.all(
+        args.Connections.map(async (conn) => {
+          let newConn = new Connection(conn);
+          const result = await newConnection.save();
+          return result._id;
+        })
+      );
 
       let newStation = new Station({
         ...args,
@@ -45,21 +47,32 @@ export default {
       });
       return newStation.save();
     },
-    modifyStation: (parent, args) => {
-      await Promise.all(args.Connections.map(async conn => {
-        return Connection.findByIdAndUpdate(conn.id, conn, {new: true});
-      }));
+    modifyStation: async (parent, args) => {
+      await Promise.all(
+        args.Connections.map(async (conn) => {
+          return Connection.findByIdAndUpdate(conn.id, conn, { new: true });
+        })
+      );
       let newStation = {
         Title: args.Title,
         AddressLine1: args.AddressLine1,
         Town: args.Town,
         StateOrProvince: args.StateOrProvince,
-        Postcode: args.Postcode
+        Postcode: args.Postcode,
       };
-      return await Station.findByIdAndUpdate(args.id, newStation, {new: true});
+      return await Station.findByIdAndUpdate(args.id, newStation, {
+        new: true,
+      });
     },
-    deleteStation: (parent, args) => {
-      return Station.findByIdAndDelete(args.id);
+    deleteStation: async (parent, args) => {
+      const delStat = await Station.findById(args.id);
+      const delRes = await Promise.all(
+        stat.Connections.map(async (conn) => {
+          return Connection.findByIdAndDelete(conn._id);
+        })
+      );
+      const result = await Station.findByIdAndDelete(args.id);
+      return result;
     },
   },
 };
