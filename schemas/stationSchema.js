@@ -4,6 +4,7 @@ export default gql`
   extend type Query {
     station(id: ID): Station
     stations(bounds: Bounds, limit: Int, start: Int): [Station]
+    stations: [Station]
   }
 
   type Station {

@@ -4,6 +4,7 @@ export default {
   Query: {
     stations: (parent, args, context, info) => {
       if (args.bounds) {
+        // check later
         const mapBounds = rectangleBounds(
           args.bounds_northEast,
           args.bounds._southWest
