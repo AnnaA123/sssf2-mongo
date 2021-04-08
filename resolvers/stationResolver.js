@@ -59,7 +59,7 @@ export default {
       return await Station.findByIdAndUpdate(args.id, newStation, {new: true});
     },
     deleteStation: (parent, args) => {
-      return Station.findByIdAndDelete(args.id, args);
+      return Station.findByIdAndDelete(args.id);
     },
   },
 };
