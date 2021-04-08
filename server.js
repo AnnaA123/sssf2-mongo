@@ -14,13 +14,7 @@ dotenv.config();
       console.log("Connected succesfully.");
     }
 
-    console.log(
-      "undefined types: ",
-      conn.types,
-      conn.queryTypes,
-      conn.inputTypes,
-      conn.mutationTypes
-    ); // fix later !!!
+    console.log("undefined types: ", schemas); // fix later !!!
 
     const server = new ApolloServer({
       typeDefs: schemas,
