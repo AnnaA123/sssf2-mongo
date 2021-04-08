@@ -2,11 +2,16 @@ import Station from "../models/stationModel.js";
 
 export default {
   Query: {
-    stations: () => {
+    stations: (parent, args, context, info) => {
       return Station.find();
     },
     station: (parent, args) => {
-      return Station.findById(args.id);
+      return Station.findById(args.id).populate({
+        path: "Connections",
+        populate: {
+          path: "ConnectionTypeID LevelID CurrentTypeID",
+        },
+      });
     },
   },
 
