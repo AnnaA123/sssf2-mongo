@@ -8,7 +8,12 @@ export default {
       return Station.find();
     },
     station: (parent, args) => {
-      return Station.findById(args.id);
+      return Station.findById(args.id).populate({
+        path: "Connections",
+        populate: {
+          path: "ConnectionTypeID LevelID currentTypeID",
+        },
+      });
     },
   },
 
@@ -17,7 +22,7 @@ export default {
       const conns = await Promise.all(
         args.Connections.map(async (conn) => {
           let newConn = new Connection(conn);
-          const result = await newConnection.save();
+          const result = await newConn.save();
           return result._id;
         })
       );
@@ -48,10 +53,11 @@ export default {
     deleteStation: async (parent, args) => {
       const delStat = await Station.findById(args.id);
       const delRes = await Promise.all(
-        stat.Connections.map(async (conn) => {
+        delStat.Connections.map(async (conn) => {
           return Connection.findByIdAndDelete(conn._id);
         })
       );
+      console.log("delete result: ", delRes);
       const result = await Station.findByIdAndDelete(args.id);
       return result;
     },
