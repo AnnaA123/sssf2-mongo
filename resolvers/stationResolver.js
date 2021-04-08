@@ -6,12 +6,7 @@ export default {
       return Station.find();
     },
     station: (parent, args) => {
-      return Station.findById(args.id).populate({
-        path: "Connections",
-        populate: {
-          path: "ConnectionTypeID LevelID CurrentTypeID",
-        },
-      });
+      return Station.findById(args.id);
     },
   },
 
