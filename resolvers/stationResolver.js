@@ -1,3 +1,4 @@
+import { Connection } from "mongoose";
 import Station from "../models/stationModel.js";
 
 export default {
@@ -32,7 +33,16 @@ export default {
 
   Mutation: {
     addStation: (parent, args) => {
-      const newStation = new Station(args);
+      const conns = await Promise.all(args.Connections.map(async conn => {
+        let newConn = new Connection(conn);
+        const result = await newConnection.save();
+        return result._id;
+      }));
+
+      let newStation = new Station({
+        ...args,
+        Connections: conns,
+      });
       return newStation.save();
     },
     modifyStation: (parent, args) => {
