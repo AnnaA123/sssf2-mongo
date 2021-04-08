@@ -4,27 +4,7 @@ import Station from "../models/stationModel.js";
 export default {
   Query: {
     stations: (parent, args, context, info) => {
-      if (args.bounds) {
-        // check later
-        const mapBounds = rectangleBounds(
-          args.bounds_northEast,
-          args.bounds._southWest
-        );
-        return Station.find({
-          Location: {
-            $geoWithin: {
-              $geometry: mapBounds,
-            },
-          },
-        }).populate({
-          path: "Connections",
-          populate: {
-            path: "ConnectionTypeID LevelID CurrentTypeID",
-          },
-        });
-      } else {
-        return Station.find();
-      }
+      return Station.find();
     },
     station: (parent, args) => {
       return Station.findById(args.id);
