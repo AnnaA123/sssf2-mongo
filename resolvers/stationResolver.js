@@ -46,7 +46,17 @@ export default {
       return newStation.save();
     },
     modifyStation: (parent, args) => {
-      return Station.findByIdAndUpdate(args.id, args);
+      await Promise.all(args.Connections.map(async conn => {
+        return Connection.findByIdAndUpdate(conn.id, conn, {new: true});
+      }));
+      let newStation = {
+        Title: args.Title,
+        AddressLine1: args.AddressLine1,
+        Town: args.Town,
+        StateOrProvince: args.StateOrProvince,
+        Postcode: args.Postcode
+      };
+      return await Station.findByIdAndUpdate(args.id, newStation, {new: true});
     },
     deleteStation: (parent, args) => {
       return Station.findByIdAndDelete(args.id, args);
