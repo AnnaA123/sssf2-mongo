@@ -6,8 +6,8 @@ export default gql`
   }
 
   type CurrentType {
-    id: ID
-    Description: String
+    id: ID,
+    Description: String,
     Title: String
   }
 `;

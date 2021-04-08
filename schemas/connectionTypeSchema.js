@@ -6,8 +6,8 @@ export default gql`
   }
 
   type ConnectionType {
-    id: ID
-    FormalName: String
-    Title: String
+    id: ID,
+    FormalName: String,
+    Title: String,
   }
 `;

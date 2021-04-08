@@ -6,9 +6,9 @@ export default gql`
   }
 
   type CurrentType {
-    id: ID
-    Comments: String
-    IsFastChargeCapable: Boolean
+    id: ID,
+    Comments: String,
+    IsFastChargeCapable: Boolean,
     Title: String
   }
 `;
