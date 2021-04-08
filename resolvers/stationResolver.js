@@ -22,7 +22,7 @@ export default {
           },
         });
       } else {
-        return Station.find().limit(args.limit);
+        return Station.find();
       }
     },
     station: (parent, args) => {
