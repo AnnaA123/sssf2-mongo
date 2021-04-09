@@ -1,4 +1,3 @@
-/*
 const currentType = require("../models/currentTypeModel.js");
 
 const getCurrentTypeList = async (req, res) => {
@@ -22,4 +21,3 @@ const deleteCurrentType = async (req, res) => {
 };
 
 module.exports = { getCurrentTypeList, getOneCurrentType, deleteCurrentType };
-*/

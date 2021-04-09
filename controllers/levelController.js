@@ -1,4 +1,3 @@
-/*
 const level = require("../models/levelModel.js");
 
 const getLevelList = async (req, res) => {
@@ -22,4 +21,3 @@ const deleteLevel = async (req, res) => {
 };
 
 module.exports = { getLevelList, getOneLevel, deleteLevel };
-*/
