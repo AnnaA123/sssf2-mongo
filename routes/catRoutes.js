@@ -1,3 +1,4 @@
+/*
 const router = require("express").Router();
 const cat = require("../models/catModel.js");
 
@@ -39,3 +40,4 @@ router
     res.send(`deleted ${del.deletedCount} cat post`);
   });
 module.exports = router;
+*/
