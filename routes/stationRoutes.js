@@ -1,4 +1,3 @@
-/*
 const router = require("express").Router();
 const e = require("express");
 const connectionModel = require("../models/connectionModel.js");
@@ -16,4 +15,3 @@ router
   .delete(stationController.deleteStation);
 
 module.exports = router;
-*/

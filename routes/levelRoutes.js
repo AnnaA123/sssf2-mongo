@@ -1,4 +1,3 @@
-/*
 const router = require("express").Router();
 const e = require("express");
 const level = require("../models/levelModel.js");
@@ -12,4 +11,3 @@ router
   .delete(levelController.deleteLevel);
 
 module.exports = router;
-*/

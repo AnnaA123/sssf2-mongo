@@ -1,4 +1,3 @@
-/*
 const router = require("express").Router();
 const e = require("express");
 const connections = require("../models/connectionModel.js");
@@ -12,4 +11,3 @@ router
   .delete(connectionController.deleteConnection);
 
 module.exports = router;
-*/

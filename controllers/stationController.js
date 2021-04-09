@@ -1,4 +1,3 @@
-/*
 const station = require("../models/stationModel.js");
 
 const postStation = async (req, res) => {
@@ -62,4 +61,3 @@ const deleteStation = async (req, res) => {
 };
 
 module.exports = { postStation, getOneStation, getStations, deleteStation };
-*/
