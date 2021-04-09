@@ -1,3 +1,4 @@
+/*
 const connection = require("../models/connectionModel.js");
 
 const getConnectionList = async (req, res) => {
@@ -21,3 +22,4 @@ const deleteConnection = async (req, res) => {
 };
 
 module.exports = { getConnectionList, getOneConnection, deleteConnection };
+*/

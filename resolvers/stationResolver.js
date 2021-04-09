@@ -57,7 +57,7 @@ export default {
           return Connection.findByIdAndDelete(conn._id);
         })
       );
-      console.log("delete result: ", delRes);
+      console.log("delete result ", delRes);
       const result = await Station.findByIdAndDelete(args.id);
       return result;
     },

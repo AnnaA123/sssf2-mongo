@@ -6,18 +6,18 @@ export default gql`
   }
 
   type Connection {
-    id: ID,
-    Quantity: Int,
-    ConnectionTypeID: ConnectionType,
-    LevelID: Level,
+    id: ID
+    Quantity: Int
+    ConnectionTypeID: ConnectionType
+    LevelID: Level
     CurrentTypeID: CurrentType
   }
 
   input ConnectionInput {
-    id: ID,
-    Quantity: Int,
-    ConnectionTypeID: ID,
-    LevelID: ID,
+    id: ID
+    Quantity: Int
+    ConnectionTypeID: ID
+    LevelID: ID
     CurrentTypeID: ID
   }
 `;
