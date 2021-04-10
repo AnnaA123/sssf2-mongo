@@ -1,7 +1,6 @@
 import mongoose from "mongoose";
 
 const connectMongo = async () => {
-  console.log("!!!!!!!!!!!error here: ", error.toString());
   try {
     const connection = await mongoose.connect(process.env.CM_URL, {
       useNewUrlParser: true,
