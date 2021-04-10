@@ -6,15 +6,20 @@ import dotenv from "dotenv";
 import connectMongo from "./db.js";
 import { checkAuth } from "./passport/authenticate.js";
 
+dotenv.config();
+
 /*
 import https from "https";
 import http from "http";
 import fs from "fs";
 
-dotenv.config();
-
 const sslkey = fs.readFileSync("../ssl-key.pem");
 const sslcert = fs.readFileSync("../ssl-cert.pem");
+
+const options = {
+  key: sslkey,
+  cert: sslcert,
+};
 */
 
 (async () => {
