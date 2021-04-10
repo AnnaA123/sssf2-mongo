@@ -24,7 +24,7 @@ const sslcert = fs.readFileSync("../ssl-cert.pem");
       console.log("Connected succesfully.");
     }
 
-    console.log(" error here "); // fix later !!!
+    console.log("!!!!!!!!!!!error here: ", error.toString()); // fix later !!!
 
     const server = new ApolloServer({
       typeDefs: schemas,
@@ -46,20 +46,21 @@ const sslcert = fs.readFileSync("../ssl-cert.pem");
     const app = express();
 
     server.applyMiddleware({ app });
-
+    /*
     process.env.NODE_ENV = process.env.NODE_ENV || "development";
     if (process.env.NODE_ENV === "production") {
       // soon
     } else {
       localhost(app, 8000, 3000);
     }
-    /*
+    */
+
     app.listen({ port: 3000 }, () =>
       console.log(
         `🚀 Server ready at http://localhost:3000${server.graphqlPath}`
       )
     );
-/*
+
     /*
     http
       .createServer((req, res) => {
