@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import Connection from "./connectionModel.js";
 
 const Schema = mongoose.Schema;
 

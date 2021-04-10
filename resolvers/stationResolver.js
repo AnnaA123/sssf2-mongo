@@ -1,5 +1,3 @@
-import pkg from "mongoose";
-const { Connection } = pkg;
 import Station from "../models/stationModel.js";
 
 export default {

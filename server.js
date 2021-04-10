@@ -5,6 +5,8 @@ import express from "express";
 import dotenv from "dotenv";
 import connectMongo from "./db.js";
 import { checkAuth } from "./passport/authenticate.js";
+import localhost from "./security/localhost.js";
+import production from "./security/production.js";
 
 dotenv.config();
 
@@ -24,12 +26,12 @@ const options = {
 
 (async () => {
   try {
+    // console.log("!!!!!!!!!!!error here: ", error.toString()); // fix later !!!
+
     const conn = await connectMongo();
     if (conn) {
       console.log("Connected succesfully.");
     }
-
-    // console.log("!!!!!!!!!!!error here: ", error.toString()); // fix later !!!
 
     const server = new ApolloServer({
       typeDefs: schemas,
@@ -49,21 +51,21 @@ const options = {
     const app = express();
 
     server.applyMiddleware({ app });
-    /*
+
     process.env.NODE_ENV = process.env.NODE_ENV || "development";
     if (process.env.NODE_ENV === "production") {
-      // soon
+      production(app, 3000);
     } else {
       localhost(app, 8000, 3000);
     }
-    */
 
+    /*
     app.listen({ port: 3000 }, () =>
       console.log(
         `🚀 Server ready at http://localhost:3000${server.graphqlPath}`
       )
     );
-
+*/
     /*
     http
       .createServer((req, res) => {
@@ -71,7 +73,7 @@ const options = {
         res.end();
       })
       .listen(3000);
-
+/*
     https.createServer(options, app).listen(8000);
     */
   } catch (e) {
