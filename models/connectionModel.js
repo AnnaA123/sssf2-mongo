@@ -18,4 +18,4 @@ const connectionSchema = new Schema({
   Quantity: Number,
 });
 
-export default mongoose.model("Connection.js", connectionSchema);
+export default mongoose.model("Connection", connectionSchema);
