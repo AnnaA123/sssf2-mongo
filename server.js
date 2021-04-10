@@ -29,7 +29,7 @@ const options = {
       console.log("Connected succesfully.");
     }
 
-    console.log("!!!!!!!!!!!error here: ", error.toString()); // fix later !!!
+    // console.log("!!!!!!!!!!!error here: ", error.toString()); // fix later !!!
 
     const server = new ApolloServer({
       typeDefs: schemas,
