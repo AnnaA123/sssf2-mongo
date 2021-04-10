@@ -5,6 +5,8 @@ import express from "express";
 import dotenv from "dotenv";
 import connectMongo from "./db.js";
 import { checkAuth } from "./passport/authenticate.js";
+
+/*
 import https from "https";
 import http from "http";
 import fs from "fs";
@@ -13,6 +15,7 @@ dotenv.config();
 
 const sslkey = fs.readFileSync("../ssl-key.pem");
 const sslcert = fs.readFileSync("../ssl-cert.pem");
+*/
 
 (async () => {
   try {
@@ -38,16 +41,25 @@ const sslcert = fs.readFileSync("../ssl-cert.pem");
       },
     });
 
+    process.env.NODE_ENV = process.env.NODE_ENV || "development";
+
     const app = express();
 
     server.applyMiddleware({ app });
 
+    process.env.NODE_ENV = process.env.NODE_ENV || "development";
+    if (process.env.NODE_ENV === "production") {
+      // soon
+    } else {
+      localhost(app, 8000, 3000);
+    }
+    /*
     app.listen({ port: 3000 }, () =>
       console.log(
         `🚀 Server ready at http://localhost:3000${server.graphqlPath}`
       )
     );
-
+/*
     /*
     http
       .createServer((req, res) => {
