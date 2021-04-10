@@ -46,8 +46,6 @@ const options = {
       },
     });
 
-    process.env.NODE_ENV = process.env.NODE_ENV || "development";
-
     const app = express();
 
     server.applyMiddleware({ app });
