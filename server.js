@@ -50,7 +50,7 @@ const options = {
     });
 
     const app = express();
-    app.use(helmet());
+    // app.use(helmet());
 
     server.applyMiddleware({ app });
 
