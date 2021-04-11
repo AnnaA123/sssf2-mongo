@@ -2,4 +2,4 @@
 
 ---
 
-Assignment 4, incomplete due to an error
+Assignment 4
