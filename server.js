@@ -7,6 +7,7 @@ import connectMongo from "./db.js";
 import { checkAuth } from "./passport/authenticate.js";
 import localhost from "./security/localhost.js";
 import production from "./security/production.js";
+import helmet from "helmet";
 
 dotenv.config();
 
@@ -49,6 +50,7 @@ const options = {
     });
 
     const app = express();
+    app.use(helmet());
 
     server.applyMiddleware({ app });
 
