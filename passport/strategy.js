@@ -12,7 +12,7 @@ passport.use(
   new Strategy(async (username, password, done) => {
     console.log(username, password);
     try {
-      /*const user = await userModel.findOne({ username });
+      const user = await userModel.findOne({ username });
       console.log("Local strategy", user);
       if (user === null) {
         return done(null, false, { message: "Incorrect email." });
@@ -21,13 +21,12 @@ passport.use(
       if (!validate) {
         return done(null, false, { message: "Incorrect password." });
       }
-      */
-      // const strippedUser = user.toObject();
-      // delete strippedUser.password;
-      // console.log("deleted pwd", strippedUser);
 
-      const pwdFromDB =
-        "$2b$12$CdgwPNn4IoPh6F7EmKA5/OAotiP5nP2EXIhSMIAJTyMQGCEZrVxaq";
+      const strippedUser = user.toObject();
+      delete strippedUser.password;
+      console.log("deleted pwd", strippedUser);
+      /*
+      const pwdFromDB = "bar";
       const pwFromWeb = "bar";
       const validate = await bcrypt.compare(pwFromWeb, pwdFromDB);
 
@@ -35,7 +34,7 @@ passport.use(
         return done(null, false, { message: "Incorrect credentials." });
       }
       const strippedUser = { id: 1, username: "foo" };
-
+*/
       return done(null, strippedUser, { message: "Logged In Successfully" });
     } catch (err) {
       return done(err);
