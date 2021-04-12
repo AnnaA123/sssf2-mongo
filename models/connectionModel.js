@@ -18,8 +18,4 @@ const connectionSchema = new Schema({
   Quantity: Number,
 });
 
-<<<<<<< HEAD
-module.exports = mongoose.model("Connection", connectionSchema);
-=======
 export default mongoose.model("Connection", connectionSchema);
->>>>>>> gql-auth
