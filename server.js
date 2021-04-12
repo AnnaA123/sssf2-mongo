@@ -58,7 +58,8 @@ const options = {
     if (process.env.NODE_ENV === "production") {
       production(app, 3000);
     } else {
-      localhost(app, 8000, 3000);
+      production(app, 3000);
+      // localhost(app, 8000, 3000);
     }
 
     /*
