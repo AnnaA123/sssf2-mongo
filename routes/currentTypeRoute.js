@@ -1,3 +1,4 @@
+/*
 const router = require("express").Router();
 const e = require("express");
 const currentType = require("../models/currentTypeModel.js");
@@ -11,3 +12,4 @@ router
   .delete(currentTypeController.deleteCurrentType);
 
 module.exports = router;
+*/

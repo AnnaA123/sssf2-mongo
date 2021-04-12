@@ -1,3 +1,4 @@
+/*
 const connectionType = require("../models/connectionTypeModel.js");
 
 const getConnectionTypeList = async (req, res) => {
@@ -25,3 +26,4 @@ module.exports = {
   getOneConnectionType,
   deleteConnectionType,
 };
+*/

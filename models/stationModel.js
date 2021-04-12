@@ -1,4 +1,5 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
+import Connection from "./connectionModel.js";
 
 const Schema = mongoose.Schema;
 
@@ -11,8 +12,7 @@ const stationSchema = new Schema({
   Location: {
     type: {
       type: String,
-      enum: ["Point"],
-      required: true,
+      default: "Point",
     },
     coordinates: {
       type: [Number],
@@ -26,9 +26,9 @@ const stationSchema = new Schema({
     },
   ],
 });
-
-stationSchema.query.byTown = function (town) {
-  return this.find({ Town: new RegExp(town, "i") });
-};
-
-module.exports = mongoose.model("Station", stationSchema);
+/*
+  stationSchema.query.byTown = function (town) {
+    return this.find({ Town: new RegExp(town, "i") });
+  };
+*/
+export default mongoose.model("Station", stationSchema);

@@ -1,23 +1,17 @@
+/*
 const router = require("express").Router();
 const cat = require("../models/catModel.js");
 
 router
   .route("/")
-  .post(
-    async (req, res) => {
-      const post = await cat.create({
-        name: req.body.name,
-        age: req.body.age,
-        genre: req.body.genre,
-      });
-      res.send(`cat post ${post.name} created with id: ${post._id}`);
-    }
-    /*
-  catch (e) {
-    res.send("failed to create cat");
-  }
-  */
-  )
+  .post(async (req, res) => {
+    const post = await cat.create({
+      name: req.body.name,
+      age: req.body.age,
+      genre: req.body.genre,
+    });
+    res.send(`cat post ${post.name} created with id: ${post._id}`);
+  })
   .get(async (req, res) => {
     try {
       const posts = await cat.find().byGenre(req.query.genre);
@@ -46,3 +40,4 @@ router
     res.send(`deleted ${del.deletedCount} cat post`);
   });
 module.exports = router;
+*/
