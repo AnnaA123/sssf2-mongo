@@ -5,7 +5,7 @@ import express from "express";
 import dotenv from "dotenv";
 import connectMongo from "./db.js";
 import { checkAuth } from "./passport/authenticate.js";
-import localhost from "./security/localhost.js";
+// import localhost from "./security/localhost.js";
 import production from "./security/production.js";
 import helmet from "helmet";
 
