@@ -1,4 +1,3 @@
-/*
 import https from "https";
 import http from "http";
 import fs from "fs";
@@ -22,4 +21,3 @@ const localhost = (app, httpsPort, httpPort) => {
 };
 
 export default localhost;
-*/
