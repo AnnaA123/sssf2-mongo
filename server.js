@@ -5,9 +5,9 @@ import express from "express";
 import dotenv from "dotenv";
 import connectMongo from "./db.js";
 import { checkAuth } from "./passport/authenticate.js";
-import localhost from "./security/localhost.js";
+// import localhost from "./security/localhost.js";
 import production from "./security/production.js";
-import helmet from "helmet";
+// import helmet from "helmet";
 
 dotenv.config();
 
@@ -61,7 +61,7 @@ const options = {
       production(app, 3000);
     } else {
       production(app, 3000);
-      // localhost(app, 8000, 3000);
+      //localhost(app, 8000, 3000);
     }
 
     /*
