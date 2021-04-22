@@ -55,7 +55,7 @@ const options = {
 
     server.applyMiddleware({ app });
 
-    process.env.NODE_ENV = process.env.NODE_ENV || "development";
+    process.env.NODE_ENV = process.env.NODE_ENV || "production";
     if (process.env.NODE_ENV === "production") {
       production(app, 3000);
     } else {
