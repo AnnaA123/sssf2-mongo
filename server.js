@@ -51,7 +51,6 @@ const options = {
 
     const app = express();
 
-    // crashes graphql
     // app.use(helmet());
 
     server.applyMiddleware({ app });
