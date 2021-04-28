@@ -55,12 +55,12 @@ const options = {
 
     server.applyMiddleware({ app });
 
-    process.env.NODE_ENV = process.env.NODE_ENV || "production";
+    process.env.NODE_ENV = process.env.NODE_ENV || "development";
     if (process.env.NODE_ENV === "production") {
       production(app, 3000);
     } else {
-      production(app, 3000);
-      // localhost(app, 8000, 3000);
+      //production(app, 3000);
+      localhost(app, 8000, 3000);
     }
 
     /*
